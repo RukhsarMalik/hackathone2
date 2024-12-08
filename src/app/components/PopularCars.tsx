@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { carData } from "../data/cars";
 import Link from "next/link";
