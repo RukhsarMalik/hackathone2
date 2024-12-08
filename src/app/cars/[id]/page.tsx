@@ -1,16 +1,12 @@
-
 import Image from "next/image";
 import { carData } from "../../data/cars";
 import { notFound } from "next/navigation";
 
-// Define the type for the params object
-interface Params {
-  id: string; // URL parameter for car ID
-}
-
-// Define the props interface for the page component
+// Define the type for the page props with params being dynamically typed
 interface CarDetailsPageProps {
-  params: Params; // This is how params will be passed to the component
+  params: {
+    id: string; // URL parameter for car ID
+  };
 }
 
 const CarDetails = ({ params }: CarDetailsPageProps) => {
@@ -29,6 +25,7 @@ const CarDetails = ({ params }: CarDetailsPageProps) => {
         src={car.image}
         alt={car.name}
         width={800}
+        height={400} // Add height for better image layout
         className="w-full h-auto mb-4 rounded-lg"
       />
       <p className="text-lg">Type: {car.type}</p>
