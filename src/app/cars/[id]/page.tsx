@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import { carData } from "../../data/cars";
 import { notFound } from "next/navigation";
 
@@ -24,9 +25,10 @@ const CarDetails = ({ params }: CarDetailsPageProps) => {
   return (
     <div className="max-w-[800px] mx-auto my-8">
       <h1 className="text-3xl font-bold mb-4">{car.name}</h1>
-      <img
+      <Image
         src={car.image}
         alt={car.name}
+        width={800}
         className="w-full h-auto mb-4 rounded-lg"
       />
       <p className="text-lg">Type: {car.type}</p>
