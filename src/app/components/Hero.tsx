@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import React from 'react';
-import { IoSwapVerticalOutline } from "react-icons/io5";
+
 
 const HeroSection = () => {
   return (
