@@ -9,6 +9,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 
 const CategorySection = () => {
   const [showCount, setShowCount] = useState(9); // Default 9 cars
@@ -148,15 +149,15 @@ const CategorySection = () => {
           <div className="flex flex-col md:flex-row items-center gap-6 bg-gray-100 p-4 rounded-lg">
             {/* Pick-Up Section */}
             <div className="flex flex-col justify-between bg-white p-4 md:w-[486px] md:h-[132px] w-full h-auto rounded-lg shadow-md">
-              <div className="flex flex-row justify-between mb-5 items-center w-[92px] h-[20px]">
-                <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
-                <label
-                  htmlFor="pickup-section"
-                  className="w-[68px] h-[20px] text-[16px] leading-[24px] font-semibold text-gray-700"
-                >
-                  Pickup
-                </label>
-              </div>
+            <div className="flex flex-row justify-between items-center w-[92px] h-[20px]">
+            <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
+            <label
+              htmlFor="pickup-section"
+              className="w-[68px] h-[20px] text-[16px] leading-[24px] font-semibold text-gray-700"
+            >
+              Pickup
+            </label>
+          </div>
               <div className="flex flex-col text-[12px] md:flex-row gap-2 md:gap-4">
                 {/* Location */}
                 <div className="flex flex-col w-full md:w-[140px]">
@@ -189,15 +190,15 @@ const CategorySection = () => {
 
             {/* Drop-Off Section */}
             <div className="flex flex-col justify-between bg-white p-4 md:w-[486px] md:h-[132px] w-full h-auto rounded-lg shadow-md">
-            <div className="flex flex-row justify-between mb-5 items-center w-[92px] h-[20px]">
-              <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
-              <label
-                htmlFor="pickup-section"
-                className="w-[68px] h-[20px] text-[16px] leading-[24px] font-semibold text-gray-700"
-              >
-                Drop Off
-              </label>
-           </div>
+            <div className="flex flex-row justify-between items-center w-[92px] h-[20px]">
+            <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
+            <label
+              htmlFor="pickup-section"
+              className="w-[68px] h-[20px] text-[16px] leading-[24px] font-semibold text-gray-700"
+            >
+              Drop Off
+            </label>
+          </div>
               <div className="flex flex-col text-[12px] md:flex-row gap-2 md:gap-4">
                 {/* Location */}
                 <div className="flex flex-col w-full md:w-[140px]">
@@ -230,6 +231,7 @@ const CategorySection = () => {
           {/* Car Cards */}
           <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {carData.slice(0, showCount).map((car) => (
+              <Link href="/details" key={car.id}>
               <div
                 key={car.id}
                 className="bg-white shadow-md rounded-md p-4 m-2 hover:shadow-lg hover:scale-105 transition-all duration-300"
@@ -309,6 +311,7 @@ const CategorySection = () => {
                   </div>
                 </div>
               </div>
+              </Link>
             ))}
           </div>
 
