@@ -4,6 +4,14 @@ import Image from "next/image";
 import { carData } from "../data/cars";
 import Link from "next/link";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+
 
 const PopularCars = () => {
   const [favorites, setFavorites] = useState<number[]>([]); // Tracks favorite car IDs
@@ -26,8 +34,8 @@ const PopularCars = () => {
         </Link>
       </div>
 
-      <div className="flex transition-transform duration-300">
-        {/* Display only the first 4 cars */}
+      {/* For Large Screens */}
+      <div className="hidden md:flex transition-transform duration-300">
         {carData.slice(0, 4).map((car) => (
           <div
             key={car.id}
@@ -58,8 +66,8 @@ const PopularCars = () => {
               <Image
                 src={car.image}
                 alt={car.name}
-                width={300} // Add specific width
-                height={150} // Add specific height
+                width={300}
+                height={150}
                 className="w-full h-[150px] object-contain"
               />
               <div className="mt-4 space-y-2">
@@ -110,6 +118,102 @@ const PopularCars = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* For Smaller Screens */}
+      <div className="md:hidden">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={20}
+          slidesPerView={"auto"}
+          grabCursor={true}
+          pagination={{ clickable: true }}
+          className="popular-cars-swiper"
+        >
+          {carData.slice(0, 4).map((car) => (
+            <SwiperSlide key={car.id} className="min-w-[304px]">
+              <div className="bg-white shadow-md rounded-md p-4 m-2 hover:shadow-lg transition-shadow">
+                <div>
+                  <div className="flex justify-between items-center mb-4">
+                    {/* Title */}
+                    <div>
+                      <h3 className="text-lg font-bold">{car.name}</h3>
+                      <p className="text-sm text-gray-500">{car.type}</p>
+                    </div>
+                    {/* Heart Icon */}
+                    <div
+                      onClick={() => toggleFavorite(car.id)}
+                      className="cursor-pointer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill={favorites.includes(car.id) ? "red" : "gray"}
+                        className="h-6 w-6 transition-colors duration-300"
+                      >
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <Image
+                    src={car.image}
+                    alt={car.name}
+                    width={300}
+                    height={150}
+                    className="w-full h-[150px] object-contain"
+                  />
+                  <div className="mt-4 space-y-2">
+                    {/* Features */}
+                    <div className="flex text-[#90A3BF] items-center space-x-4">
+                      <div className="flex items-center space-x-1">
+                        <Image
+                          src="/icons/fuel.png"
+                          alt="Fuel"
+                          width={20}
+                          height={20}
+                          className="h-5 w-5"
+                        />
+                        <span className="text-sm">{car.petrol}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Image
+                          src="/icons/manual.png"
+                          alt="Manual"
+                          width={20}
+                          height={20}
+                          className="h-5 w-5"
+                        />
+                        <span className="text-sm">{car.transmission}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Image
+                          src="/icons/seats.png"
+                          alt="Seats"
+                          width={20}
+                          height={20}
+                          className="h-5 w-5"
+                        />
+                        <span className="text-sm">{car.seats} People</span>
+                      </div>
+                    </div>
+                    {/* Pricing */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-lg font-bold">
+                        ${car.price}{" "}
+                        <span className="text-[#90A3BF] text-[14px]">/day</span>
+                      </span>
+                      <button className="px-[20px] py-2 bg-[#3563E9] text-white rounded-lg hover:bg-blue-700">
+                        Rent Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+
       </div>
     </section>
   );

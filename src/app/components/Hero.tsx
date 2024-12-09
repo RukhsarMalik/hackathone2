@@ -59,155 +59,85 @@ const HeroSection = () => {
 
 
           {/* Pickup and Drop-off Section */}
-      <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6 flex-wrap">
-        {/* Pickup Section */}
-        <div className="flex flex-col w-[327px] h-[120px] md:w-[582px] md:h-[136px] border-none border-r-[10px] bg-white gap-3 rounded-lg p-6">
-          <div className="flex flex-row justify-between items-center w-[92px] h-[20px]">
-            <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
-            <label
-              htmlFor="pickup-section"
-              className="w-[68px] h-[20px] text-[16px] leading-[24px] font-semibold text-gray-700"
-            >
-              Pickup
-            </label>
+          <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6 flex-wrap">
+        
+              {/* Pick-Up Section */}
+              <div className="flex flex-col justify-between bg-white p-4 md:w-[582px] md:h-[132px] w-full h-auto rounded-lg shadow-md">
+              <div className="flex flex-row justify-between mb-5 items-center w-[92px] h-[20px]">
+                <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
+                <label
+                  htmlFor="pickup-section"
+                  className="w-[68px] h-[20px] text-[16px] leading-[24px] font-semibold text-gray-700"
+                >
+                  Pickup
+                </label>
+              </div>
+                <div className="flex flex-col text-[12px] md:flex-row gap-2 md:gap-4">
+                  {/* Location */}
+                  <div className="flex flex-col w-full md:w-[140px]">
+                    <label className="text-black text-[16px] font-bold mb-1">Location</label>
+                    <select className="w-full p-2 text-gray-600">
+                      <option>Select your city</option>
+                    </select>
+                  </div>
+                  {/* Date */}
+                  <div className="flex flex-col w-full md:w-[140px]">
+                    <label className="text-black text-[16px] font-bold mb-1">Date</label>
+                    <select className="w-full p-2 text-gray-600">
+                      <option>Select your date</option>
+                    </select>
+                  </div>
+                  {/* Time */}
+                  <div className="flex flex-col w-full md:w-[140px]">
+                    <label className="text-black text-[16px] font-bold mb-1">Time</label>
+                    <select className="w-full p-2 text-gray-600">
+                      <option>Select your time</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Swipe Button */}
+              <button className="bg-blue-500 text-white w-[60px] h-[60px] rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 transition">
+                ↔️
+              </button>
+
+              {/* Drop-Off Section */}
+              <div className="flex flex-col justify-between bg-white p-4 md:w-[582px] md:h-[132px] w-[327px] h-auto rounded-lg shadow-md">
+              <div className="flex flex-row justify-between mb-5 items-center w-[92px] h-[20px]">
+                  <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
+                <label
+                    htmlFor="pickup-section"
+                    className="w-[68px] h-[20px] text-[16px] leading-[24px] font-semibold text-gray-700"
+                  >
+                    Drop Off
+                </label>
+              </div>
+                <div className="flex flex-col text-[12px] md:flex-row gap-2 md:gap-4">
+                  {/* Location */}
+                  <div className="flex flex-col w-full md:w-[140px]">
+                    <label className="text-black text-[16px] font-bold mb-1">Location</label>
+                    <select className="w-full p-2 text-gray-600 ">
+                      <option>Select your city</option>
+                    </select>
+                  </div>
+                  {/* Date */}
+                  <div className="flex flex-col w-full md:w-[140px]">
+                    <label className="text-black text-[16px] font-bold mb-1">Date</label>
+                    <select className="w-full p-2 text-gray-600 ">
+                      <option>Select your date</option>
+                    </select>
+                  </div>
+                  {/* Time */}
+                  <div className="flex flex-col w-full md:w-[140px]">
+                    <label className="text-black text-[16px] font-bold mb-1">Time</label>
+                    <select className="w-full p-2 text-gray-600 ">
+                      <option>Select your time</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
           </div>
-
-          <div className="flex flex-row gap-4 justify-between items-center">
-            {/* Location Section */}
-            <div className="flex item-start justify-center flex-col flex-1">
-              <label
-                htmlFor="pickup-location"
-                className="text-sm font-semibold text-gray-900 mb-2"
-              >
-                Location
-              </label>
-              <select
-                id="pickup-location"
-                className="w-full px-4 py-2 border-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#90A3BF] text-[14px]"
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Select your city
-                </option>
-                <option value="new-york">New York</option>
-                <option value="los-angeles">Los Angeles</option>
-                <option value="chicago">Chicago</option>
-              </select>
-            </div>
-
-            {/* Date Section */}
-            <div className="flex flex-col flex-1">
-              <label
-                htmlFor="pickup-date"
-                className="text-sm font-semibold text-gray-900 mb-2"
-              >
-                Date
-              </label>
-              
-              <input
-                id="pickup-date"
-                type="date"
-                className="md:w-full w-[87px] sm:h-[16px] px-4 py-2  text-[#90A3BF] focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            {/* Time Section */}
-            <div className="flex flex-col flex-1">
-              <label
-                htmlFor="pickup-time"
-                className="text-sm font-semibold text-gray-900 mb-2"
-              >
-                Time
-              </label>
-              <input
-                id="pickup-time"
-                type="time"
-                className="md:w-full w-[36px] sm:h-[16px] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Switch Button */}
-        <div className="flex justify-center items-center md:my-0 my-4">
-          <button
-            className="w-12 h-12 bg-blue-500 rounded-full shadow-lg text-white flex justify-center items-center transform hover:scale-110 transition-transform duration-300"
-            title="Switch"
-          >
-            <IoSwapVerticalOutline />
-          </button>
-        </div>
-
-        {/* Drop-off Section */}
-        <div className="flex flex-col w-[327px] h-[120px] md:w-[582px] md:h-[136px] border-none border-r-[10px] bg-white gap-3 rounded-lg p-6">
-          <div className="flex flex-row justify-between items-center w-[92px] h-[20px]">
-            <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
-            <label
-              htmlFor="dropoff-section"
-              className="w-[68px] h-[20px] text-[16px] leading-[24px] font-semibold text-gray-700"
-            >
-              Drop Off
-            </label>
-          </div>
-
-          <div className="flex flex-row gap-4 justify-between items-center">
-            {/* Location Section */}
-            <div className="flex flex-col justify-center flex-1">
-              <label
-                htmlFor="dropoff-location"
-                className="text-[16px] md:text-sm font-semibold text-gray-900 mb-2"
-              >
-                Location
-              </label>
-              <select
-                id="dropoff-location"
-                className="md:w-full w-[60px]  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#90A3BF] text-[14px]"
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Select your city
-                </option>
-                <option value="new-york">New York</option>
-                <option value="los-angeles">Los Angeles</option>
-                <option value="chicago">Chicago</option>
-              </select>
-            </div>
-
-            {/* Date Section */}
-            <div className="flex flex-col flex-1">
-              <label
-                htmlFor="dropoff-date"
-                className="text-sm font-semibold text-gray-900 mb-2"
-              >
-                Date
-              </label>
-              <input
-                id="dropoff-date"
-                type="date"
-                className="md:w-full w-[87px] h-[44px] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            {/* Time Section */}
-            <div className="flex flex-col flex-1">
-              <label
-                htmlFor="dropoff-time"
-                className="text-sm font-semibold text-gray-900 mb-2"
-              >
-                Time
-              </label>
-              <input
-                id="dropoff-time"
-                type="time"
-                className="md:w-full w-[36px] h-[16px] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-
     
 
     </section>
