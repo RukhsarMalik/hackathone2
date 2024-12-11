@@ -70,3 +70,29 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.container {
+  display: flex;
+  flex-direction: column; /* Default for smaller screens */
+}
+
+.rental-summary {
+  order: 1; /* Show at the top */
+}
+
+.form-section {
+  order: 2; /* Show below */
+}
+
+@media (min-width: 768px) { /* Adjust for larger screens */
+  .container {
+      flex-direction: row; /* Normal layout for larger screens */
+  }
+
+  .rental-summary {
+      order: 2; /* Original order for larger screens */
+  }
+
+  .form-section {
+      order: 1; /* Original order for larger screens */
+  }
+}

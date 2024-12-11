@@ -4,6 +4,7 @@ import { carData } from "../data/cars"; // Import car data from your data file
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 const Car2Details = () => {
   const recentCars = carData.slice(4, 8); // Recent Cars Data
@@ -241,9 +242,11 @@ const Car2Details = () => {
               {/* Pricing */}
               <div className="flex items-center justify-between pt-7">
                 <span className="text-xl font-bold">$4,200</span>
-                <button className="bg-[#3563E9] text-white px-4 py-2 rounded-md">
-                  Book Your Test Ride
-                </button>
+                <Link href="/rental"> 
+                  <button className="bg-[#3563E9] text-white px-4 py-2 rounded-md">
+                    Book Your Test Ride
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
