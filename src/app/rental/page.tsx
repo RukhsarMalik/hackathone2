@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CarRental() {
   return (
@@ -247,7 +248,9 @@ export default function CarRental() {
                 <input type="checkbox" id="terms" />
                 <label htmlFor="terms" className="ml-2">I agree with our terms and conditions and privacy policy.</label>
               </div>
-              <button className="md:w-[140px] md:[56px] bg-blue-500 text-white p-3 rounded-lg">Rent Now</button>
+              <Link href="/admin">
+                <button className="md:w-[140px] md:[56px] bg-blue-500 text-white p-3 rounded-lg">Rent Now</button>
+              </Link>
 
 
               <div className="items-start md:w-[548px] md:h-[100px] mt-6">
