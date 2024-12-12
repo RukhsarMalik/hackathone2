@@ -45,69 +45,68 @@ export default function AdminPage() {
 
       <Sheet>
         <SheetTrigger
-          className="md:hidden absolute top-4 left-4 z-10"
+          className="md:hidden absolute top-0 left-4 z-10"
           aria-label="Open mobile menu"
         >
           <Menu />
         </SheetTrigger>
         <SheetContent aria-label="Mobile navigation">
           <SheetTitle className=" text-white">Menu</SheetTitle>
-          <div className="w-[286px] h-[900px] bg-white shadow-lg flex flex-col justify-between p-6">
-            {/* Main Menu */}
-            <div>
-              <h2 className="text-gray-400 text-sm font-semibold mb-4">Main Menu</h2>
-              <ul className="space-y-3">
-                {menuItems.map((item) => (
-                  <li
-                    key={item.name}
-                    onClick={() => setActiveItem(item.name)}
-                    className={`flex items-center gap-4 p-3 rounded-md cursor-pointer ${
-                      activeItem === item.name ? "bg-blue-500 text-white" : "text-[#90A3BF]"
-                    }`}
-                  >
-                    <Image src={item.icon} alt={item.name} width={24} height={24} />
-                    <span className="text-[16px]">{item.name}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <div className="w-[286px] h-[900px] bg-white shadow-lg flex flex-col justify-between p-6">
+                {/* Main Menu */}
+                <div>
+                  <h2 className="text-gray-400 text-sm font-semibold">Main Menu</h2>
+                  <ul className="space-y-3">
+                    {menuItems.map((item) => (
+                      <li
+                        key={item.name}
+                        onClick={() => setActiveItem(item.name)}
+                        className={`flex items-center gap-4 p-3 rounded-md cursor-pointer ${
+                          activeItem === item.name ? "bg-blue-500 text-white" : "text-[#90A3BF]"
+                        }`}
+                      >
+                        <span className="text-[16px]">{item.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            {/* Preferences */}
-            <div>
-              <h2 className="text-gray-400 text-sm font-semibold mb-4">Preferences</h2>
-              <ul className="space-y-3">
-                {preferenceItems.map((item) => (
-                  <li
-                    key={item.name}
-                    onClick={() => setActiveItem(item.name)}
-                    className={`flex items-center gap-4 p-3 rounded-md cursor-pointer ${
-                      activeItem === item.name ? "bg-blue-500 text-white" : "text-[#90A3BF]"
-                    }`}
-                  >
-                    <Image src={item.icon} alt={item.name} width={24} height={24} />
-                    <span className="text-[16px]">{item.name}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Logout */}
-            <div>
-              <button
-                onClick={() => setActiveItem("Logout")}
-                className={`flex items-center gap-4 p-3 rounded-md cursor-pointer ${
-                  activeItem === "Logout" ? "bg-blue-500 text-white" : "text-[#90A3BF]"
-                }`}
-              >
-                <Image src="/a10.png" alt="Logout" width={24} height={24} />
-                <span className="text-[16px]">Log Out</span>
-              </button>
-            </div>
-         </div>
-          
+                {/* Preferences */}
+                <div>
+                  <h2 className="text-gray-400 text-sm font-semibold">Preferences</h2>
+                  <ul className="space-y-3">
+                    {preferenceItems.map((item) => (
+                      <li
+                        key={item.name}
+                        onClick={() => setActiveItem(item.name)}
+                        className={`flex items-center gap-4 p-3 rounded-md cursor-pointer ${
+                          activeItem === item.name ? "bg-blue-500 text-white" : "text-[#90A3BF]"
+                        }`}
+                      >
+                        <span className="text-[16px]">{item.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                  {/* Logout */}
+                  <div>
+                    <button
+                      onClick={() => setActiveItem("Logout")}
+                      className={`flex items-center gap-4 p-3 rounded-md cursor-pointer ${
+                        activeItem === "Logout" ? "bg-blue-500 text-white" : "text-[#90A3BF]"
+                      }`}
+                    >
+                      <span className="text-[16px]">Log Out</span>
+                    </button>
+                  </div>
+              </div>
+                
             
           </SheetContent>
         </Sheet>
+
+
+        
       {/* Sidebar */}
       <div className="hidden lg:block w-[286px] h-[900px] bg-white shadow-lg md:flex flex-col justify-between p-6">
         {/* Main Menu */}
