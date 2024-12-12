@@ -27,7 +27,7 @@ const HeroSection = () => {
                 <p className="md:w-[284px] md:h-[48px] w-[216px] h-[38px] text-[12px] md:text-[16px] leading-[19.2px] md:leading-[24px]">
                   Base of doing a car rental safely and <br /> reliably. Of course at a low price.
                 </p>
-                <button className="w-[128px] md:w-[120px] h-[44px] bg-[#3563E9] text-white rounded-sm">
+                <button className="w-[100px] h-[40px] md:w-[120px] md:h-[44px] bg-[#3563E9] text-white rounded-sm">
                   Rental Car
                 </button>
               </div>

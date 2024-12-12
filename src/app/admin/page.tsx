@@ -52,7 +52,7 @@ export default function AdminPage() {
         </SheetTrigger>
         <SheetContent aria-label="Mobile navigation">
           <SheetTitle className=" text-white">Menu</SheetTitle>
-              <div className="w-[286px] h-[900px] bg-white shadow-lg flex flex-col justify-between p-6">
+              <div className="flex flex-col">
                 {/* Main Menu */}
                 <div>
                   <h2 className="text-gray-400 text-sm font-semibold">Main Menu</h2>
@@ -189,7 +189,7 @@ export default function AdminPage() {
 
                 {/* Car Name and Type */}
                 <div>
-                  <h3 className="text-[24px] font-bold">Nissan GT - R</h3>
+                  <h3 className="md:text-[24px] text-[18px] font-bold">Nissan GT - R</h3>
                   <p className="text-[14px] text-[#3D5278]">Sport Car</p>
                 </div>
               </div>
@@ -198,7 +198,7 @@ export default function AdminPage() {
               <div className="flex flex-col items-center gap-6 bg-white p-4 rounded-lg">
                 {/* Pick-Up Section */}
                 <div className="flex flex-col justify-between bg-white p-4 w-full rounded-lg shadow-md">
-                  <div className="flex flex-row justify-between items-center">
+                  <div className="flex flex-row gap-2 items-center">
                     <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
                     <label className="text-[16px] font-semibold text-gray-700">Pickup</label>
                   </div>
@@ -229,7 +229,7 @@ export default function AdminPage() {
 
                 {/* Drop-Off Section */}
                 <div className="flex flex-col justify-between bg-white p-4 w-full rounded-lg shadow-md">
-                  <div className="flex flex-row justify-between items-center">
+                  <div className="flex flex-row  gap-2 items-center">
                     <Image className="w-[16px] h-[16px]" src="/mark.png" alt="" width={16} height={16} />
                     <label className="text-[16px] font-semibold text-gray-700">Drop Off</label>
                   </div>

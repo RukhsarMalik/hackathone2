@@ -249,7 +249,7 @@ export default function CarRental() {
                 <label htmlFor="terms" className="ml-2">I agree with our terms and conditions and privacy policy.</label>
               </div>
               <Link href="/admin">
-                <button className="md:w-[140px] md:[56px] bg-blue-500 text-white p-3 rounded-lg">Rent Now</button>
+                <button className="md:w-[140px] mt-5 md:[56px] bg-blue-500 text-white p-3 rounded-lg">Rent Now</button>
               </Link>
 
 
